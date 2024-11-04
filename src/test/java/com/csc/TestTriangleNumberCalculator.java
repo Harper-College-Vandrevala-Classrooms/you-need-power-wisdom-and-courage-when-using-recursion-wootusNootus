@@ -1,6 +1,7 @@
 package com.csc;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -41,5 +42,27 @@ public class TestTriangleNumberCalculator {
       assertEquals(9, calculator.subtract(5, 3));
       assertEquals(55, calculator.subtract(10, 0));
       assertEquals(0, calculator.subtract(3, 3));
+  }
+
+  // Test for the multiply function
+  @Test
+  public void testMultiply() {
+    assertEquals(0, calculator.multiply(0, 5));
+    assertEquals(3, calculator.multiply(1, 2)); 
+    assertEquals(90, calculator.multiply(3, 5)); 
+    assertEquals(15, calculator.multiply(5, 1)); 
+  }
+
+  // Test for the divide function
+  @Test
+  public void testDivide() {
+    assertEquals(1, calculator.divide(1, 1));
+    assertEquals(5, calculator.divide(5, 2)); 
+    assertEquals(7, calculator.divide(6, 2)); // 15 / 3
+
+    // Test for divide by zero case
+    assertThrows(ArithmeticException.class, () -> {
+      calculator.divide(3, 0);
+    });
   }
 }

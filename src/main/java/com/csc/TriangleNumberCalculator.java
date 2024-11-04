@@ -19,4 +19,15 @@ public class TriangleNumberCalculator {
   public int subtract(int n, int m){
     return value(n) - value(m);
   }
+
+  // Multiplies nth and mth triangular numbers
+  public int multiply(int n, int m){
+    return value(n) * value(m);
+  }
+
+  // Divides nth and mth triangular numbers
+  public int divide(int n, int m){
+    return value(n) / value(m);
+  }
+
 }
